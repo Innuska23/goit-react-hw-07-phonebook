@@ -5,7 +5,7 @@ import { FormContact, Error, InputForm, LabelForm, ButtonForm } from './ContactF
 
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../redux/operations';
-import { getContacts } from '../redux/selectors';
+import { selectContacts } from '../redux/selectors';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -22,7 +22,7 @@ const numberInputId = nanoid();
 
 const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const handleSubmit = (e, { resetForm }) => {
 
     const name = e.name.trim();

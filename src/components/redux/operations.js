@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { DEFAULT_CONTACTS } from '../Constants/Constants';
+import { BASE_URL } from '../Constants/constant';
 
-axios.defaults.baseURL = DEFAULT_CONTACTS;
+axios.defaults.baseURL = BASE_URL;
 
 export const fetchContacts = createAsyncThunk(
     'contacts/fetchAll',
