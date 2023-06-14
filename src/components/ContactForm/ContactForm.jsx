@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import { FormContact, Error, InputForm, LabelForm, ButtonForm } from './ContactForm.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../redux/contactSlice';
+import { addContact } from '../redux/operations';
 import { getContacts } from '../redux/selectors';
 
 const schema = yup.object().shape({
@@ -23,7 +23,7 @@ const numberInputId = nanoid();
 const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
-  const handleSubmit = (e, {resetForm }) => {
+  const handleSubmit = (e, { resetForm }) => {
 
     const name = e.name.trim();
     if (contacts.find(el => el.name.toLowerCase() === name.toLowerCase())) {
