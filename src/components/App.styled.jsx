@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div `
+export const Container = styled.div`
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -9,4 +9,9 @@ export const Container = styled.div `
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
+`;
+
+export const MessageText = styled.p`
+    margin-top: 25px;
+    font-weight: bold;
 `;

@@ -6,16 +6,18 @@ import { useDispatch } from 'react-redux';
 import { Button, List, ListItem } from './ContactList.styled';
 import { deleteContact } from '../redux/operations';
 
-function ContactList({ id }) {
+function ContactList() {
     const dispatch = useDispatch();
-    const onDelete = () => {
+    const onDelete = (id) => {
         dispatch(deleteContact(id));
     };
+
     const contacts = useSelector(selectContacts);
     const filter = useSelector(selectFilter);
     const filterContacts = contacts.filter(({ name }) =>
         name.toLowerCase().includes(filter)
     );
+    // eslint-disable-next-line
     const visibleContacts = useSelector(selectVisibleContacts);
 
     return (

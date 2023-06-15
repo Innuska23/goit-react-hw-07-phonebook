@@ -1,7 +1,7 @@
 import ContactForm from "./ContactForm/ContactForm";
 import Filter from "./Filter/Filter";
 import ContactList from './ContactList/ContactList';
-import { Container } from "./App.styled";
+import { Container, MessageText } from "./App.styled";
 
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,8 +23,8 @@ function App() {
       <ContactForm />
       <h2>Contacts</h2>
       <Filter />
-      {isLoading && !error && <b>Loading...</b>}
-      {error && <b>Error: {error}</b>}
+      {isLoading && !error && <MessageText>Loading...</MessageText>}
+      {error && <MessageText>Error: {error}</MessageText>}
       <ContactList />
     </Container>
   );
