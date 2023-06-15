@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import { DEFAULT_CONTACTS } from 'components/Constants';
 
 import { fetchContacts, addContact, deleteContact } from './operations';
 
@@ -49,5 +48,4 @@ const contactsSlice = createSlice({
     },
 });
 
-// export const { addContact, deleteContact } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;

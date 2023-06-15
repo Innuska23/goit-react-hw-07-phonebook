@@ -17,6 +17,7 @@ function ContactList({ id }) {
         name.toLowerCase().includes(filter)
     );
     const visibleContacts = useSelector(selectVisibleContacts);
+
     return (
         <List>
             {filterContacts.map(({ id, name, number }, idx) => (
